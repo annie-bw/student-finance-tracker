@@ -1,6 +1,8 @@
 # 💰 Student Finance Tracker
 
-**Live Demo**: [GitHub Pages URL - Add your URL here]
+**Live Demo**: (https://annie-bw.github.io/student-finance-tracker/)
+**GitHub Repository link: https://github.com/annie-bw/student-finance-tracker.git
+**Demo video :
 
 A simple and intuitive web application designed to help students manage their finances, track expenses, and build healthy saving habits.
 
