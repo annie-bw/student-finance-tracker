@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Finance Tracker</title>
+
+     <link rel="stylesheet" href="./styles.css"/>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+    <!--header-->
+    <header>
+        <p>Student Finance Tracker</p>
+<nav>
+
+        <button data-page="dashboard">Dashboard</button>
+        <button data-page="records" >Records</button>
+        <button data-page="savings" >Savings</button>
+         <button data-page="transaction">Add Transaction</button>
+        <button data-page="settings">Settings</button>
+        <button data-page="about">About</button>
+
+</nav>
+
+    </header>
+<!--main-->
+    <main>
+
+<!-- Dashboard -->
+<section id="dashboard" >
+  <h1>Welcome back!</h1>
+  <p>Here's your financial overview</p>
+
+  <!-- Summary Cards -->
+  <div class="summary-container">
+    <article class="finance-summary expenses">
+      <div>
+        <p class="summary-title">Total Expenses <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-check" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+  <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+</svg>
+</p>
+        <h3>RWF 0.00</h3>
+      </div>
+    </article>
+
+    <article class="finance-summary savings">
+      <div>
+        <p class="summary-title">Total Savings<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-piggy-bank" viewBox="0 0 16 16">
+  <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962"/>
+  <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199"/>
+</svg>
+</p>
+        <h3>RWF 0.00</h3>
+        <p class="small-text">Across all months</p>
+      </div>
+    </article>
+
+    <article class="finance-summary spending">
+      <div>
+        <p class="summary-title">Top Spending Category
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+</svg>
+</p>
+        <h3>Fees</h3>
+        <p class="small-text">RWF 0.00</p>
+      </div>
+    </article>
+
+    <article class="finance-summary remaining">
+      <div>
+        <p class="summary-title">Remaining Budget<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+</svg>
+</p>
+        <h3>USD -589.14</h3>
+        <p class="small-text">Cap: RWF 0.00</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Spending Trend Chart -->
+<div class="chart-card">
+  <h3>Spending Trend (Last 7 Days)</h3>
+  <canvas id="spendingChart" style="max-height: 300px;"></canvas>
+</div>
+
+<!-- Spending by Category Chart -->
+<div class="category-card" id="categoryBreakdown">
+  <h3>Spending by Category</h3>
+  <!-- Category items will be generated dynamically -->
+</div>
+  </section>
+
+
+<!--records-->
+
+<section id="records" style="display: none;">
+
+    <h3>Transaction Records</h3>
+<p>Search, filter, and manage your transactions</p>
+<div class="filter-board">
+<form>
+
+    <p>Filters</p>
+<div class="filters-grid">
+
+    <div class="search-filter">
+    <label for="searchInput" id="search-filter">Search transaction</label><div class="search-wrapper" style="position: relative; width: 250px;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"
+       style="position: absolute; top: 50%; left: 10px; transform: translateY(80%);pointer-events: none;">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.406a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+  </svg>
+  </div>
+  <input type="text" placeholder="Search transaction..." style="padding-left: 30px; width: 100%;">
+  </div>
+  <div class="category-filter">
+  <label for="category-filter">Category</label>
+   <select id="category-filter" name="category-filter">
+  <option value="all">All</option>
+  <option value="food">Food</option>
+  <option value="books">Books</option>
+  <option value="rent">Rent</option>
+  <option value="transport">Transport</option>
+  <option value="fees">Fees</option>
+  <option value="entertainment">Entertainment</option>
+  <option value="others">Others</option>
+</select>
+</div>
+<div class="from">
+<label for="from">From</label>
+<input type="date" id="from" name="from"  pattern="/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/20\d{2}$/">
+</div>
+
+<div class="to">
+<label for="to">To</label>
+<input type="date" id="to" name="to"  pattern="/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/20\d{2}$/" >
+</div>
+<div class="type-filter">
+<label for="type">Type</label>
+   <select id="type" name="type">
+    <option value="all">All</option>
+    <option value="expense">Expenses</option>
+  <option value="income">Income</option>
+</select>
+</div>
+<div class="sort-filter">
+<label for="sort">Sort by</label>
+   <select id="sort" name="sort">
+    <option value="newest">Date (newest to oldest)</option>
+  <option value="oldest">Date (oldest to newest)</option>
+  <option value="high">Amount (high to low)</option>
+  <option value="low">Amount (low to high)</option>
+  <option value="category-sort">Category (A-Z)</option>
+</select>
+</div>
+</div>
+<button type="clear"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="transform: translateY(20%);">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+</svg>     Clear filters</button>
+
+</form>
+</div>
+
+<button type="button" id="csvExportBtn" class="csv-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+  </svg>
+  Export CSV
+</button>
+
+<div class="records-table">
+<table id="recordsTable">
+<thead>
+    <tr>
+     <th>Date</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Currency</th>
+        <th>Actions</th>
+      </tr>
+    </tr>
+</thead>
+<tbody>
+
+</tbody>
+
+</table>
+</div>
+</section>
+
+<!-- Savings Section -->
+<section id="savings" style="display: none;">
+  <h2>Savings Overview</h2>
+  <p class="subtitle">Track your accumulated savings</p>
+
+  <!-- Current Savings -->
+  <div class="savings-card current-savings">
+    <div class="savings-info">
+      <div class="icon piggy">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0"/>
+          <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595Z"/>
+        </svg>
+      </div>
+      <div>
+        <p class="label">Current Savings</p>
+        <h3>RWF 0.00</h3>
+        <p class="note">Total Income - Total Expenses</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Income & Expenses -->
+  <div class="savings-grid">
+    <div class="savings-card income">
+      <h4>📈 Total Income</h4>
+      <p>All income transactions</p>
+      <p class="amount">RWF 0.00</p>
+    </div>
+
+    <div class="savings-card expenses">
+      <h4>📉 Total Expenses</h4>
+      <p>All expense transactions</p>
+      <p class="amount">RWF 0.00</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="savings-card about">
+    <h4>💡 About Savings</h4>
+    <p>Your current savings are calculated as the difference between your total income and total expenses. To increase your savings, try to minimize expenses or increase income sources.</p>
+  </div>
+</section>
+
+<!--add transaction-->
+<section id="transaction" style="display:none">
+<h1>Add Transaction</h1>
+<p>Enter the details of your new transaction</p>
+
+<div id="successMessage" style="display: none;"></div>
+
+
+<div class="form-container" id="transactionForm">
+    <form>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" required placeholder="e.g, Lunch at Cafeteria">
+
+        <label for="currency">Currency</label>
+        <select id="currency" name="currency">
+          <option value="USD">USD</option>
+          <option value="RWF">RWF</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="KES">KES</option>
+          <option value="UGX">UGX</option>
+        </select>
+
+        <label for="amount">Amount</label>
+        <input type="number" step="0.01" id="amount" name="amount" required placeholder="0.00">
+
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="">Select category</option>
+          <option value="food">Food</option>
+          <option value="books">Books</option>
+          <option value="rent">Rent</option>
+          <option value="transport">Transport</option>
+          <option value="fees">Fees</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="others">Others</option>
+        </select>
+
+        <label for="transactionType">Type</label>
+        <select id="transactionType" name="transactionType">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+        </select>
+
+        <label for="date">Date</label>
+        <input type="date" pattern="/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/20\d{2}$/" id="date" name="date" required>
+
+        <button type="submit" id="addBtn">Add Transaction</button>
+    </form>
+</div>
+</section>
+
+<!--settings section-->
+<section id="settings" style="display:none" >
+<h1>Settings</h1>
+<p>Customize your finance tracker preferences</p>
+
+<form>
+  <div class="settings-form">
+    <div class="base">
+    <label for="currency">Base Currency</label>
+   <select id="baseCurrency" name="currency">
+  <option value="RWF">RWF</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+  <option value="KES">KES</option>
+  <option value="UGX">UGX</option>
+  <option value="JPY">JPY</option>
+  <option value="CNY">CNY</option>
+  <option value="INR">INR</option>
+</select>
+</div>
+
+<h3>Currency Conversions</h3>
+<p>Set conversion rates relative to USD
+<div class="currency-convert">
+<div class="currency-row">
+    <div class="currency">
+    <label for="currency-1">Currency 1</label>
+   <select id="currency-1" name="currency-2">
+  <option value="RWF">RWF</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+  <option value="KES">KES</option>
+  <option value="UGX">UGX</option>
+  <option value="JPY">JPY</option>
+  <option value="CNY">CNY</option>
+  <option value="INR">INR</option>
+</select>
+</div>
+<div class="rates">
+<label for="rate-1">Rate(1 USD=?RWF)</label>
+<input type="number" id="rate-1" name="rate-1" step="0.01"
+  min="0">
+  </div>
+</div>
+
+<div class="currency-row">
+  <div class="currency">
+<label for="currency-2">Currency 2</label>
+   <select id="currency-2" name="currency-2">
+  <option value="RWF">RWF</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+  <option value="KES">KES</option>
+  <option value="UGX">UGX</option>
+  <option value="JPY">JPY</option>
+  <option value="CNY">CNY</option>
+  <option value="INR">INR</option>
+</select>
+</div>
+<div class="rates">
+<label for="rate-2">Rate(1 USD=?RWF)</label>
+<input type="number" id="rate-2" name="rate-2" step="0.01"
+  min="0">
+
+  </div>
+  </div>
+</div>
+<div class="budget-cap">
+    <h4>Monthly Budget Cap </h4>
+    <label for="cap"></label>
+<input type="number" id="cap" name="cap"
+  min="0">
+
+  <p>
+    Set a spending limit to track your budget
+  </p>
+  <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
+  <path d="M11 2H9v3h2z"/>
+  <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
+</svg> Save Settings</button>
+</div>
+</p>
+
+
+<div class="currency-preview">
+    <h4>Currency Preview</h4>
+    <p>
+        1 USD = 1300 INR
+    </p>
+    <p>
+         1 USD = 13 KES
+    </p>
+</div>
+</form>
+</div>
+</section>
+
+
+<!--about section-->
+<section id="about" style="display:none">
+<h2>About Student Finance Tracker</h2>
+<p>A modern, user-friendly application designed to help students take control of their finances and build healthy spending habits.</p>
+
+<div class="app-use">
+<article class="about">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+</svg>
+    <p class="feature">Track Expenses</p>
+    <p>Monitor all your spending in one place with detailed categorization</p>
+</article>
+<article class="about">
+     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+</svg>
+    <p class="feature">Visual Analytics</p>
+    <p>View your spending patterns with interactive charts and graphs</p>
+</article>
+<article class="about">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+</svg>
+    <p class="feature">Category Management</p>
+    <p>Organize expenses into Food, Books, Transport, Entertainment, and more</p>
+</article>
+</div>
+<div class="purpose-contact">
+<article class="about">
+    <h3>Our Purpose</h3>
+    <p>Student Finance Tracker was built with the understanding that managing money can be challenging for students. Whether you're budgeting for textbooks, tracking daily expenses, or saving for future goals, this app provides the tools you need to stay financially organized.<br/>
+
+With features like regex-powered search, visual spending analytics, and customizable budget caps, we aim to make financial management simple, intuitive, and accessible for students everywhere.</p>
+</article>
+<article class="about">
+    <div class="developer">
+    <p><strong>Developer Contact</strong></p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+  <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+  <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+</svg> <p> <strong>Email Us For Support</strong> </p>
+<p>developer@studentfinanceapp.com</p>
+</div>
+<div class="copyright">
+   <p> Made for students worldwide</p>
+<p>© 2025 Student Finance Tracker</p>
+</div>
+</article>
+</div>
+</section>
+
+
+    </main>
+
+    <!--footer-->
+    <footer>
+    <div>
+        <p>
+    @ALU-Project Student Finance Tracker-BWIZA
+        </p>
+    </div>
+    </footer>
+<script src="./js/app.js" defer></script>
+<script src="./js/settings.js" defer></script>
+<script src="./js/transactions.js" defer></script>
+<script src="./js/records.js" defer></script>
+<script src="./js/dashboard.js" defer></script>
+<script src="./js/savings.js" defer></script>
+</body>
+</html>
