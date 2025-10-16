@@ -441,6 +441,30 @@ This project is free to use for educational purposes.
 
 ---
 
+## 🤖 Development Tools & AI Assistance
+
+### AI Assistance Disclosure
+Portions of this project were developed with assistance from **Claude AI (Anthropic)**:
+
+**Areas where AI was consulted:**
+- Accessibility implementation (ARIA labels, keyboard shortcuts, screen reader support)
+- Regex pattern validation and edge case testing
+- Responsive CSS Grid/Flexbox layouts
+- Documentation structure and technical writing
+
+**Independently developed:**
+- Core application architecture and logic
+- Transaction management system
+- Data persistence strategy (localStorage)
+- UI/UX design decisions
+- Currency conversion implementation
+- CSV export functionality
+- Overall project concept and requirements
+
+The use of AI tools was for learning, optimization, and ensuring best practices in web accessibility standards (WCAG 2.1 compliance).
+
+---
+
 ## 🙏 Acknowledgments
 
 Built with vanilla JavaScript, HTML5, and CSS3. No frameworks or libraries used.
