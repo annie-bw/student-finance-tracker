@@ -1,6 +1,6 @@
 # 💰 Student Finance Tracker
 
-**Live Demo**: (https://annie-bw.github.io/student-finance-tracker/)
+**Live Demo**: (https://www.loom.com/share/cd2ab4eeedbe4c5386f7931e5198233d?sid=0c2f1072-25de-40ce-874b-50eb5de71b76)
 
 GitHub Repository link: https://github.com/annie-bw/student-finance-tracker.git
 
