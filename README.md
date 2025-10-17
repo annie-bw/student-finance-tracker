@@ -432,16 +432,9 @@ student-finance-tracker/
 
 ---
 
-## 📄 License
-
-This project is free to use for educational purposes.
-
----
-
 ## 👨‍💻 Developer
 
-[Your Name]  
-[Your Contact/GitHub]
+BWIZA Annie Pierre 
 
 ---
 
