@@ -4,7 +4,7 @@
 
 GitHub Repository link: https://github.com/annie-bw/student-finance-tracker.git
 
-GitHub pages: https://github.com/annie-bw/student-finance-tracker.git](https://annie-bw.github.io/student-finance-tracker/
+GitHub pages: https://annie-bw.github.io/student-finance-tracker/
 
 
 Demo video :
