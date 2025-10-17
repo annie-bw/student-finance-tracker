@@ -452,9 +452,6 @@ Portions of this project were developed with assistance from **Claude AI (Anthro
 
 **Areas where AI was consulted:**
 - Accessibility implementation (ARIA labels, keyboard shortcuts, screen reader support)
-- Regex pattern validation and edge case testing
-- Responsive CSS Grid/Flexbox layouts
-- Documentation structure and technical writing
 
 **Independently developed:**
 - Core application architecture and logic
